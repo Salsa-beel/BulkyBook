@@ -1,11 +1,13 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args); 
 
 // Add services to the container.
+// (this part for dependency injection)
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+//pipline specifies how application response to a request
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
