@@ -4,7 +4,7 @@ using BulkyBook.Models;
 
 namespace BulkyBook.Controllers;
 
-public class HomeController : Controller
+public class HomeController : Controller // goes to Home in view folder.
 {
     private readonly ILogger<HomeController> _logger;
 
@@ -13,12 +13,14 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+
+
+    public IActionResult Index() // return index in view folder.
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Privacy() // return privacy in view folder.
     {
         return View();
     }
