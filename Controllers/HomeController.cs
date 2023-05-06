@@ -17,6 +17,7 @@ public class HomeController : Controller // goes to Home in view folder.
 
     public IActionResult Index() // return index in view folder.
     {
+        //Iactionresult is generic it can return a page or view
         return View();
     }
 

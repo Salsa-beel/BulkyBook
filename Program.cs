@@ -1,8 +1,18 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using BulkyBook.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // this part is for dependency injection also.
 builder.Services.AddControllersWithViews();
+// we need to add in programe that we will use db contect
+//and also add the connection string we will use
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+    //GetConnectionString method only works if I named "ConnectionStrings" in appsettings.json file, If it's changed, it won't work 
+    builder.Configuration.GetConnectionString("DefaultConnection") // defaultConnection is the name of the connection string
+    ));
+
 
 var app = builder.Build();
 
